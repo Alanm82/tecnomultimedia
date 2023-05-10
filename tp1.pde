@@ -91,7 +91,7 @@ void setup(){
      
  boolean Zonadeboton = (mouseX >= 535 && mouseX <= 588 && mouseY >= 413 && mouseY <= 433);
     //boton
-     if (Contador>500){
+     if (Contador>2500){
         fill(Colorboton);
   rect(535,413,53,20);
    fill(0,0,0);
@@ -112,14 +112,14 @@ void setup(){
  boolean Zonadeboton;
  
  void mouseClicked(){
-   if (Contador>500){
+   if (Contador>2500){
   Zonadeboton = (mouseX >= 535 && mouseX <= 588 && mouseY >= 413 && mouseY <= 433);
    }
    if(Zonadeboton == true){
    background(0);
    Contador = 0;
    }
-     if (Contador <= 500) {
+     if (Contador <= 2500) {
     Zonadeboton = false;
    }
  }
