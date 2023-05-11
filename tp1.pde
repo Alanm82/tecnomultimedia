@@ -11,6 +11,7 @@ float posy = (100);
 float green=(0);
 float red=(0);
 float blue=(0);
+PFont Fuente;
 
 void setup(){ 
   size(640,480);   
@@ -18,6 +19,7 @@ void setup(){
   img2= loadImage("galeon2.jpg");
   img3= loadImage("galeon3.jpg");
   textSize(16);
+ Fuente=loadFont("CalifornianFB-Italic-48.vlw");
 }
 
 //void mousePressed(){
@@ -27,6 +29,7 @@ void setup(){
 
 
   void draw() {
+    textFont(Fuente);
     textSize(30);
       //Introduccion
     if(Contador<=300){
