@@ -3,6 +3,8 @@ int Colorboton=(255);
 PImage img1;
 PImage img2;
 PImage img3;
+PImage img4;
+PImage img5;
 int Contador =(0);
 int alpha = (0);
 int randoncolor = (0);
@@ -18,6 +20,8 @@ void setup(){
   img1= loadImage("galeon1.jpg");
   img2= loadImage("galeon2.jpg");
   img3= loadImage("galeon3.jpg");
+  img4= loadImage("galeonchiquito.jpg");
+  img5= loadImage("galeonchiquitogris.jpg");
   textSize(16);
  Fuente=loadFont("CalifornianFB-Italic-48.vlw");
 }
@@ -80,7 +84,7 @@ void setup(){
     //incrementar contador
     Contador ++;
     //print contador
-    //text("Contador:"+Contador,10,20);
+   text("Contador:"+Contador,10,20); 
     
     //random color variable
      if (Contador%100 == 0){
@@ -90,37 +94,42 @@ void setup(){
      }
 
     textSize(12);
-     // Definir Zonadeboton
      
- boolean Zonadeboton = (mouseX >= 535 && mouseX <= 588 && mouseY >= 413 && mouseY <= 433);
+    
     //boton
      if (Contador>2500){
-        fill(Colorboton);
-  rect(535,413,53,20);
+        //fill(Colorboton);
+        image (img4, 535,413);
+  //rect(535,413,53,20);
    fill(0,0,0);
   text("Reiniciar",540,425 );
      }
+     boolean Zonadeboton = false;
      
  
-  
-  
+  // Definir Zonadeboton
+ if  (Contador>2500){
+   Zonadeboton = (mouseX >= 535 && mouseX <= 585 && mouseY >= 413 && mouseY <= 449);
+ }
   //Cambiar el color del boton si el mouse esta sobre el 
  
   if (Zonadeboton == true) {
-  Colorboton = 150;
-} else {
-  Colorboton = 255;
- }
+  image (img5, 535,413);
+  fill (0,0,0);
+    text("Reiniciar",540,425 );
+} 
+ 
   }
  boolean Zonadeboton;
  
  void mouseClicked(){
    if (Contador>2500){
-  Zonadeboton = (mouseX >= 535 && mouseX <= 588 && mouseY >= 413 && mouseY <= 433);
+  Zonadeboton = (mouseX >= 535 && mouseX <= 585 && mouseY >= 413 && mouseY <= 449);
    }
    if(Zonadeboton == true){
    background(0);
    Contador = 0;
+   alpha = 0 ;
    }
      if (Contador <= 2500) {
     Zonadeboton = false;
