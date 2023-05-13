@@ -84,7 +84,7 @@ void setup(){
     //incrementar contador
     Contador ++;
     //print contador
-   text("Contador:"+Contador,10,20); 
+   //text("Contador:"+Contador,10,20); 
     
     //random color variable
      if (Contador%100 == 0){
