@@ -1,3 +1,6 @@
+//Link del video
+//https://youtu.be/OwYEwwQmX1g
+
 //variables
 PImage img;
 int modiTam=20;
@@ -49,10 +52,10 @@ void draw() {
           // Establecer el color del stroke
           if (i == 0) {
           fill(hue, 100 + hue, hue);
-          stroke(hue, 100 + hue, hue);  // Rojo
+          stroke(hue, 100 + hue, hue);  //verde
           }else if (i == 1) {
           fill (100 + hue, hue, hue);
-          stroke(100 + hue, hue, hue);  // Verde
+          stroke(100 + hue, hue, hue);  //rojo
           }else if (i == 2) {
           fill (130 + hue, 80 + hue, hue);
           stroke(130 + hue, 80 + hue, hue);  // Azul
