@@ -30,7 +30,7 @@ void draw() {
     }
   textSize(18);
 textAlign(CENTER, CENTER);
-int Posy = 30; // Posición vertical inicial
+int Posy = 30; 
 int espacio = 25;
 int posx= 300;
 
@@ -41,7 +41,7 @@ for (int i = 0; i < texto.length; i++) {
   textSize(50);
    Posy=200;
    espacio=100;
-    posx= 230;
+   posx= 230;
 }
   for (int j = 0; j < lineaDividida.length; j++) {
     text(lineaDividida[j],posx,Posy+(espacio*j));

@@ -8,13 +8,14 @@ int alto =50;
 
 
 void Continue() {
+  float alpha =map(mouseX,0,width,0,255); 
   rectMode(CENTER);
-  stroke(255);
+  stroke(255,alpha);
   textSize(20);
   textAlign(CENTER, CENTER);
+  
 
-
-    fill (0);
+    fill (0,alpha);
     rect(x, y, ancho, alto);
     fill (255);
     text("Continuar", x, y-5);
