@@ -1,3 +1,4 @@
+//https://youtu.be/qJTPXbMpixQ
 int Estado=0;
 PImage[] imagenes = new PImage[17]; // array de imagenes
 String texto[];
@@ -47,7 +48,6 @@ for (int i = 0; i < texto.length; i++) {
     text(lineaDividida[j],posx,Posy+(espacio*j));
   }
 }
- text(Estado,20,20);
 
 
  
