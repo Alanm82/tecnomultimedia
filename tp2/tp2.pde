@@ -15,28 +15,26 @@ void setup() {
 
 void draw() {
   image(img, 0, 0);
-  dibujar_rect(Cant_de_rects); // Llama a la función dibujar_rect con la cantidad de cuadrados deseada
+  dibujar_rect(Cant_de_rects);
 }
 
 void keyPressed() {
   if (keyCode == UP) {
-    //aumentar cuadrados dibujados
-    if (Cant_de_rects>1 && Cant_de_rects<30 ) {
+    if (Cant_de_rects>2 && Cant_de_rects<30 ) {
       Cant_de_rects-=1;
     }
     if (Cant_de_rects>30) {
-      Cant_de_rects-=4;
+      Cant_de_rects-=3;
     }
   }
 
-  //disminuir cuadrados dibujados
-  if (keyCode == DOWN && Cant_de_rects>0 && Cant_de_rects<150) {
+
+  if (keyCode == DOWN && Cant_de_rects>0 && Cant_de_rects<100) {
     Cant_de_rects+=2;
   }
 
   //reiniciar
   if (key == 'R' || key == 'r') {
-    //rotar= radians (0);
     Cant_de_rects=15;
   }
 }

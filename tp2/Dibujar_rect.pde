@@ -45,7 +45,6 @@ void dibujar_rect(int Cant_de_rects) {
         stroke(70 + hue, hue, 130 + hue);  // violeta
       }
 
-      // Dibujar rectángulo
       rect(0, 0, tamaño, tamaño);
     }
 
