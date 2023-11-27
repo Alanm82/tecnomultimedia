@@ -7,13 +7,15 @@ class Pantalla2botones{
     this.botonText2=botonText2;
     this.toPantalla=toPantalla;
     this.toPantalla1=toPantalla1;
+    this.crearBoton();
+    this.crearTexto();
   }
 
-  Dibujar()
+  dibujar()
   {
     image(this.Imagen, 0, 0);
-    this.objOptionBoton[0].Dibujar();
-    this.objOptionBoton[1].Dibujar();
+    this.objOptionBoton[0].dibujar();
+    this.objOptionBoton[1].dibujar();
   }
   crearBoton() {
     this.objOptionBoton[0]= new Boton(550, 450, 100, this.botonText, this.toPantalla);
@@ -25,10 +27,19 @@ class Pantalla2botones{
     this.objTexto
   }
 
-  ManejarClick()
+  manejarClick()
   {
     let nuevaPantalla;
     nuevaPantalla=this.objOptionBoton[0].Click();
+    if (nuevaPantalla)
+    {
+      return nuevaPantalla;
+    }
+  }
+  
+   manejarClick1()
+  {
+    let nuevaPantalla;
     nuevaPantalla=this.objOptionBoton[1].Click();
     if (nuevaPantalla)
     {

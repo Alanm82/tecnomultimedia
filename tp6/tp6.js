@@ -11,7 +11,6 @@ function preload() {
   texto = loadStrings("Data/texto.txt");
   
 }
-
 function setup(){
   createCanvas(600,600);
   objAventura = new Aventura();
@@ -19,10 +18,10 @@ function setup(){
 
 
 function draw() {
-  objAventura.Dibujar();
+  objAventura.dibujar();
 }
   
 
 function mousePressed(){
-objAventura.mousePressed();
+objAventura.click();
 }

@@ -4,18 +4,19 @@ class Pantalla1Boton{
     this.Imagen=Imagen;
     this.botonText=botonText;
     this.toPantalla=toPantalla;
+    this.crearBoton();
   }
 
-  Dibujar()
+  dibujar()
   {
     image(this.Imagen, 0, 0);
-    this.objContinueBoton.Dibujar();
+    this.objContinueBoton.dibujar();
   }
-  CrearBoton() {
+  crearBoton() {
     this.objContinueBoton= new Boton(550, 550, 100,this.botonText,this.toPantalla);
   }
   
-  ManejarClick()
+  manejarClick()
   {
     let nuevaPantalla;
     nuevaPantalla=this.objContinueBoton.Click();
