@@ -8,10 +8,11 @@ class Pantalla1Boton {
     this.crearTexto();
   }
 
-  dibujar()
+  dibujar(pantallaActual)
   {
     image(this.Imagen, 0, 0);
     this.objContinueBoton.dibujar();
+    this.objText.dibujar(pantallaActual);
   }
   crearBoton() {
     this.objContinueBoton= new Boton(550, 550, 100, this.botonText, this.toPantalla);
@@ -19,7 +20,7 @@ class Pantalla1Boton {
 
   crearTexto()
   {
-    this.objText= new Texto(this.toPantalla);
+    this.objText= new Texto();
   }
 
   manejarClick()

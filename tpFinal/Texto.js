@@ -1,34 +1,33 @@
 class Texto {
-  constructor(toPantalla) {
+  constructor() {
     this.posX = 300;
     this.Posy = 30;
     this.espacio = 25;
     this.textSize = 15;
-    this.textoDePantalla = toPantalla;
+    this.text=texto
   }
 
-  dibujar() {
-    /* if (estado!==16) {
-     fill(255);
-     this.posX = 300;
-     this.Posy = 30;
-     this.espacio = 25;
-     this.textSize = 15;
-     } else {
-     fill(0);
-     this.posX = 230;
-     this.Posy = 200;
-     this.espacio = 100;
-     this.textSize = 45;
-     }*/
+  dibujar(pantallaActual) {
+    textSize(16);
+    if (pantallaActual==16) {
+      fill(0);
+      textSize(30);
+      this.posX = 230;
+      this.Posy = 200;
+      this.espacio = 100;
+      this.textSize = 45;
+    } else
+    {
+      fill(255);
+    }
 
-    textSize(this.textSize);  // Establece el tamaño de fuente
+    let lineaActual = this.text[pantallaActual];
 
-    // Divide la página actual en fragmentos usando el guion "-"
-    let lineas = split(texto, "-");
+    // Divide la línea actual por el guion "-"
+    let fragmentos = split(lineaActual, '-');
 
-    // Muestra cada línea en la posición deseada
-    fill(255);
-    text(lineas[this.textoDePantalla], this.posX, this.Posy + this.espacio * i);
+    for (let i = 0; i < fragmentos.length; i++) {
+      text(fragmentos[i], this.posX, this.Posy + this.espacio * i);
+    }
   }
 }

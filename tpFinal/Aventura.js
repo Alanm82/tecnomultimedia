@@ -12,11 +12,11 @@ class Aventura {
   {
     console.log(this.actualPantalla);
     if (this.actualPantalla==0) {
-      this.objPantallaHome.dibujar();
+      this.objPantallaHome.dibujar(this.actualPantalla);
     } else if (this.actualPantalla==9 || this.actualPantalla==11) {
-      this.pantalla2Botones[this.actualPantalla].dibujar();
+      this.pantalla2Botones[this.actualPantalla].dibujar(this.actualPantalla);
     } else {
-      this.objPantalla1Boton[this.actualPantalla].dibujar();
+      this.objPantalla1Boton[this.actualPantalla].dibujar(this.actualPantalla);
     }
   }
 
@@ -25,7 +25,7 @@ class Aventura {
   }
 
   crearPantallaHome() {
-    this.objPantallaHome = new PantallaHome(imgs[0]);
+    this.objPantallaHome = new PantallaHome(imgs[0], this.actualPantalla);
   }
 
   crearPantalla1Boton()
@@ -48,8 +48,8 @@ class Aventura {
 
   crearPantalla2Botones()
   {
-    this.pantalla2Botones[9]=new Pantalla2botones(imgs[9], "Entregarse", "Resistirse", 15, 10);
-    this.pantalla2Botones[11]=new Pantalla2botones(imgs[11], "Rio", "Autopista", 12, 14);
+    this.pantalla2Botones[9]=new Pantalla2botones(imgs[9], "Entregarse", "Resistirse", 15, 10, this.actualPantalla);
+    this.pantalla2Botones[11]=new Pantalla2botones(imgs[11], "Rio", "Autopista", 12, 14, this.actualPantalla);
   }
 
   click() {

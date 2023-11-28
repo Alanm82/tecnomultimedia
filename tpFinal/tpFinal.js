@@ -1,5 +1,5 @@
 let objPantalla;
-let texto= [];
+let texto=[];
 let imgs=[];
 let estado=0;
 let imgsJuego=[];
