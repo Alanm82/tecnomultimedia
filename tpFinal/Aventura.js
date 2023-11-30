@@ -6,6 +6,7 @@ class Aventura {
     this.crearPantallaHome();
     this.crearPantalla1Boton();
     this.crearPantalla2Botones();
+    this.crearJuego();
   }
 
   dibujar()
@@ -15,6 +16,8 @@ class Aventura {
       this.objPantallaHome.dibujar(this.actualPantalla);
     } else if (this.actualPantalla==9 || this.actualPantalla==11) {
       this.pantalla2Botones[this.actualPantalla].dibujar(this.actualPantalla);
+    } else if (this.actualPantalla==20) {
+      this.objJuego.Dibujar();
     } else {
       this.objPantalla1Boton[this.actualPantalla].dibujar(this.actualPantalla);
     }
@@ -33,7 +36,7 @@ class Aventura {
     this.objPantalla1Boton[1] = new Pantalla1Boton(imgs[1], "Continuar", 2);
     this.objPantalla1Boton[2] = new Pantalla1Boton(imgs[2], "Continuar", 3);
     this.objPantalla1Boton[3] = new Pantalla1Boton(imgs[3], "Continuar", 4);
-    this.objPantalla1Boton[4] = new Pantalla1Boton(imgs[4], "Continuar", 5);
+    this.objPantalla1Boton[4] = new Pantalla1Boton(imgs[4], "Continuar", 20);
     this.objPantalla1Boton[5] = new Pantalla1Boton(imgs[5], "Continuar", 6);
     this.objPantalla1Boton[6] = new Pantalla1Boton(imgs[6], "Continuar", 7);
     this.objPantalla1Boton[7] = new Pantalla1Boton(imgs[7], "Continuar", 8);
@@ -50,6 +53,25 @@ class Aventura {
   {
     this.pantalla2Botones[9]=new Pantalla2botones(imgs[9], "Entregarse", "Resistirse", 15, 10, this.actualPantalla);
     this.pantalla2Botones[11]=new Pantalla2botones(imgs[11], "Rio", "Autopista", 12, 14, this.actualPantalla);
+  }
+
+  crearJuego() {
+    this.objJuego = new Juego;
+  }
+
+  Teclado()
+  {
+    let nuevaPantalla;
+    if (this.actualPantalla==20) {
+      this.objJuego.controlesDelJuego();
+      nuevaPantalla=this.objJuego.cambiarPantalla();
+      if (nuevaPantalla)
+      {
+        this.cambiarPantalla(nuevaPantalla);
+        background(0);
+        imageMode(CORNER);
+      }
+    }
   }
 
   click() {
